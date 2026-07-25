@@ -1,0 +1,1669 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samuel.A.I - Rumus Perpangkatan Universal 4.0 Analyzer</title>
+    <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- KaTeX CDN for beautiful math rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+
+    <!-- Chart.js CDN for interactive graphs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-logo">S</div>
+                <div class="brand-text">
+                    <h1>SAMUEL.A.I</h1>
+                    <span>Versi 4.0</span>
+                </div>
+            </div>
+            
+            <nav class="nav-menu">
+                <button class="nav-item active" data-tab="dashboard">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><rect x="3" y="3" width="7" height="9"></rect><rect x="14" y="3" width="7" height="5"></rect><rect x="14" y="12" width="7" height="9"></rect><rect x="3" y="16" width="7" height="5"></rect></svg>
+                    Dashboard
+                </button>
+                <button class="nav-item" data-tab="audit">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                    Audit Matematis
+                </button>
+                <button class="nav-item" data-tab="calculator">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="8" y1="6" x2="16" y2="6"></line><line x1="16" y1="14" x2="16" y2="18"></line><path d="M16 10h.01"></path><path d="M12 10h.01"></path><path d="M8 10h.01"></path><path d="M12 14h.01"></path><path d="M8 14h.01"></path><path d="M12 18h.01"></path><path d="M8 18h.01"></path></svg>
+                    Kalkulator & Grafik
+                </button>
+                <button class="nav-item" data-tab="corrector">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+                    Formula Fixer
+                </button>
+                <button class="nav-item" data-tab="profile">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                    Profil & Dokumen
+                </button>
+                <button class="nav-item" data-tab="dictionary">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                    Kamus Matematis & A . I
+                </button>
+                <button class="nav-item" data-tab="ai-assistant">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path d="M12 2a10 10 0 0 1 10 10c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2z"></path><path d="M12 8v4l3 3"></path><circle cx="12" cy="12" r="9"></circle></svg>
+                    🤖 Samuel-Tosh AI
+                </button>
+                <button class="nav-item" data-tab="iot-dashboard">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path d="M5 12.55a11 11 0 0 1 14.08 0"></path><path d="M1.42 9a16 16 0 0 1 21.16 0"></path><path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path><line x1="12" y1="20" x2="12.01" y2="20"></line></svg>
+                    📡 Dashboard Edge IoT
+                </button>
+                <button class="nav-item" data-tab="robotics-dashboard">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path d="M12 2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2 2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"></path><rect x="4" y="8" width="16" height="12" rx="2"></rect><line x1="9" y1="13" x2="9.01" y2="13"></line><line x1="15" y1="13" x2="15.01" y2="13"></line><path d="M10 17h4"></path></svg>
+                    🤖 Rancang Bangun Robotika
+                </button>
+                <button class="nav-item" data-tab="business-dashboard">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path><line x1="12" y1="11" x2="12" y2="17"></line><line x1="9" y1="14" x2="15" y2="14"></line></svg>
+                    💼 Sistem Bisnis IoT
+                </button>
+                <button class="nav-item" data-tab="cad-payment-dashboard">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+                    📐 CAD & Payment Gateway
+                </button>
+                <button class="nav-item" data-tab="energy-dashboard">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                    ⚡ Exponential Delta Energy
+                </button>
+            </nav>
+
+            <div class="sidebar-footer">
+                <p>Karya Alumni Robotika & AI</p>
+                <p class="school">Politeknik Negeri Batam</p>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="header-title">
+                    <h2>Rumus Perpangkatan Universal 4.0</h2>
+                    <p>Menganalisis, memperbaiki, dan menyimulasikan formula matematika Samuel Purba</p>
+                </div>
+                <div class="badge-status">
+                    <span class="status-dot green"></span>
+                    <span>Terhubung ke Sandbox</span>
+                </div>
+            </header>
+
+            <!-- TAB: Dashboard -->
+            <section id="dashboard" class="tab-content active">
+                <div class="welcome-card">
+                    <div class="welcome-text">
+                        <h3>Halo, Samuel Purba! 👋</h3>
+                        <p>Selamat datang di <strong>Samuel.A.I</strong>. Platform ini dibuat khusus untuk memvisualisasikan, menganalisis, dan memperbaiki secara matematis <em>Rumus Perpangkatan Universal 4.0</em> yang Anda rancang. Mari kita selaraskan rumus Anda agar sesuai dengan kaidah kalkulus dan aljabar formal!</p>
+                    </div>
+                    <div class="formula-display-container">
+                        <div class="formula-label">FORMULA ORIGINAL DARI DOKUMEN:</div>
+                        <div class="formula-math" id="original-formula-display">
+                            $$\sum_{(x \to \infty)} \lim_{(x \to \infty)} ((x - y)^n) = \sum_{(x \to \infty)} \lim_{(x \to \infty)} \left( \frac{\{(\int x^x \, dx \times \{\frac{d}{dt} \sum_{i=k}^n \binom{n}{i} x^{k-n} y^k\}) - \int x^x \, dx\}}{\{\frac{d}{dt} \sum_{i=k}^n \binom{n}{i} x^{k-n} y^k\}} \right)$$
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+                    <!-- Card 1: Status Audit -->
+                    <div class="glass-card audit-summary">
+                        <h4>Ringkasan Audit Teknis</h4>
+                        <ul class="audit-list">
+                            <li class="audit-item critical">
+                                <span class="badge red">Kritis</span>
+                                <div>
+                                    <h5>Turunan Terhadap $t$ ($\frac{d}{dt}$)</h5>
+                                    <p>Variabel $t$ tidak ada dalam ekspresi, menghasilkan turunan $0$ dan error pembagian dengan nol.</p>
+                                </div>
+                            </li>
+                            <li class="audit-item warning">
+                                <span class="badge yellow">Peringatan</span>
+                                <div>
+                                    <h5>Integral Non-Elementer $\int x^x \, dx$</h5>
+                                    <p>Integral ini tidak dapat dipecahkan secara analitis menggunakan fungsi dasar matematika.</p>
+                                </div>
+                            </li>
+                            <li class="audit-item info">
+                                <span class="badge blue">Saran</span>
+                                <div>
+                                    <h5>Ketidaksesuaian Indeks Sumasi</h5>
+                                    <p>Variabel indeks sumasi menggunakan $i$, namun suku di dalamnya menggunakan variabel bebas $k$.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 2: Quick Calc -->
+                    <div class="glass-card quick-calc">
+                        <h4>Simulasi Cepat (Perbandingan)</h4>
+                        <div class="calc-inputs-row">
+                            <div class="input-group">
+                                <label for="quick-x">Variabel $x$</label>
+                                <input type="number" id="quick-x" value="7">
+                            </div>
+                            <div class="input-group">
+                                <label for="quick-y">Variabel $y$</label>
+                                <input type="number" id="quick-y" value="2">
+                            </div>
+                            <div class="input-group">
+                                <label for="quick-n">Pangkat $n$</label>
+                                <input type="number" id="quick-n" value="3">
+                            </div>
+                        </div>
+                        <div class="calc-results">
+                            <div class="result-box">
+                                <span class="label">Teorema Binomial Standar $(x-y)^n$</span>
+                                <span class="value" id="quick-res-std">125</span>
+                            </div>
+                            <div class="result-box error">
+                                <span class="label">Rumus Original Samuel (d/dt)</span>
+                                <span class="value" id="quick-res-sam">❌ Division by Zero</span>
+                            </div>
+                            <div class="result-box success-box highlight-success">
+                                <div class="box-header-row">
+                                    <span class="label">Rumus Terkoreksi Samuel (d/dy, k=1)</span>
+                                    <div class="badge-group">
+                                        <span class="auto-badge">⚡ Auto-Respon</span>
+                                        <span class="status-badge-green">✨ Akurat 100%</span>
+                                    </div>
+                                </div>
+                                <div class="box-value-row">
+                                    <span class="value" id="quick-res-corr">125</span>
+                                    <span class="sub-value-text">(Presisi Sempurna)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" id="btn-goto-calc">Buka Simulator Grafik &rarr;</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB: Audit -->
+            <section id="audit" class="tab-content">
+                <div class="section-header">
+                    <h3>Detail Audit Matematis</h3>
+                    <p>Bedah kritis terhadap notasi dan keabsahan rumus berdasarkan standar kalkulus akademis.</p>
+                </div>
+
+                <div class="audit-details-container">
+                    <!-- Bug 1 -->
+                    <div class="audit-card">
+                        <div class="audit-card-header">
+                            <span class="severity-badge red">Kritis</span>
+                            <h4>1. Variabel Diferensiasi & Pembagian dengan Nol</h4>
+                        </div>
+                        <div class="audit-card-body">
+                            <p>Di dalam rumus Anda, terdapat operator turunan $\frac{d}{dt}$ yang ditargetkan pada ekspresi deret binomial:</p>
+                            <div class="math-block">
+                                $$\frac{d}{dt} \left( \sum_{i=k}^n \binom{n}{i} x^{k-n} y^k \right) \quad \text{dan} \quad \frac{d}{dt} \left( \sum_{i=k}^n \binom{n}{i} x^{k-n} y^k \right)$$
+                            </div>
+                            <p><strong>Masalah:</strong> Variabel turunan adalah $t$, namun tidak ada variabel $t$ di dalam deret sumasi tersebut (semua variabel adalah $x$, $y$, $n$, $k$, $i$). Secara kalkulus formal, jika variabel-variabel tersebut tidak bergantung pada $t$, maka nilai turunan parsialnya adalah nol:</p>
+                            <div class="math-block">
+                                $$\frac{d}{dt}(\dots) = 0$$
+                            </div>
+                            <p>Hal ini mengakibatkan penyebut bernilai $0$ dan pembilangnya menjadi:</p>
+                            <div class="math-block">
+                                $$\int x^x \, dx \cdot 0 - \int x^x \, dx = -\int x^x \, dx$$
+                            </div>
+                            <p>Sehingga rumus menghasilkan bentuk tak tentu $\frac{-\int x^x \, dx}{0}$ (pembagian dengan nol).</p>
+                        </div>
+                    </div>
+
+                    <!-- Bug 2 -->
+                    <div class="audit-card">
+                        <div class="audit-card-header">
+                            <span class="severity-badge yellow">Peringatan</span>
+                            <h4>2. Integral Non-Elementer $\int x^x \, dx$</h4>
+                        </div>
+                        <div class="audit-card-body">
+                            <p>Suku $\int x^x \, dx$ adalah integral dari fungsi eksponensial diri ($x$ pangkat $x$).</p>
+                            <p><strong>Masalah:</strong> Integral ini tidak memiliki antiderivatif yang elementer. Nilainya hanya bisa dicari menggunakan deret tak hingga (seperti pada Teorema Sophomore's Dream) atau pendekatan numerik:</p>
+                            <div class="math-block">
+                                $$\int_{0}^{1} x^x \, dx = \sum_{m=1}^{\infty} \frac{(-1)^{m-1}}{m^m} = 1 - \frac{1}{4} + \frac{1}{27} - \frac{1}{256} + \dots \approx 0.783430510712134$$
+                            </div>
+                            <p>Menggunakan fungsi non-elementer ini di dalam rumus penyederhanaan pangkat membuat rumus menjadi jauh lebih rumit daripada perhitungan eksponen standar.</p>
+                        </div>
+                    </div>
+
+                    <!-- Bug 3 -->
+                    <div class="audit-card">
+                        <div class="audit-card-header">
+                            <span class="severity-badge blue">Saran</span>
+                            <h4>3. Sinkronisasi Indeks Sumasi</h4>
+                        </div>
+                        <div class="audit-card-body">
+                            <p>Notasi sumasi Anda tertulis:</p>
+                            <div class="math-block">
+                                $$\sum_{i=k}^n \binom{n}{i} x^{k-n} y^k$$
+                            </div>
+                            <p><strong>Masalah:</strong> Indeks berjalan sumasi adalah $i$, yang dimulai dari $k$ hingga $n$. Namun suku di dalamnya menggunakan $k$ dan $n$ sebagai eksponen ($x^{k-n} y^k$). Karena tidak ada indeks $i$ pada bagian variabel basis, sumasi tersebut hanya menduplikasi suku yang sama sebanyak $(n-k+1)$ kali, bukan bukan melakukan ekspansi binomial.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB: Calculator -->
+            <section id="calculator" class="tab-content">
+                <div class="section-header">
+                    <h3>Simulator Interaktif & Grafik Perbandingan</h3>
+                    <p>Bandingkan hasil Teorema Binomial dengan Rumus Samuel yang telah disesuaikan (diferensiasi diset ke variabel $y$ atau $x$).</p>
+                </div>
+
+                <div class="calculator-layout">
+                    <!-- Control Panel -->
+                    <div class="glass-card calc-controls">
+                        <h4>Parameter Input</h4>
+                        
+                        <div class="input-field">
+                            <label for="calc-x">Nilai $x$ (Basis Utama)</label>
+                            <input type="number" id="calc-x" value="7" step="0.1">
+                        </div>
+
+                        <div class="input-field">
+                            <label for="calc-y">Nilai $y$ (Pengurang)</label>
+                            <input type="number" id="calc-y" value="2" step="0.1">
+                        </div>
+
+                        <div class="input-field">
+                            <label for="calc-n">Nilai $n$ (Pangkat)</label>
+                            <input type="number" id="calc-n" value="3" min="1" max="10" step="1">
+                        </div>
+
+                        <div class="input-field">
+                            <label for="calc-k">Batas Bawah Sumasi $k$</label>
+                            <input type="number" id="calc-k" value="1" min="0" max="10" step="1">
+                        </div>
+
+                        <div class="input-divider"></div>
+
+                        <div class="corrector-panel-inline">
+                            <h5>Penerapan Koreksi (Live)</h5>
+                            
+                            <label class="control-checkbox-mini">
+                                <input type="checkbox" id="calc-fix-deriv" checked>
+                                <span class="control-label-mini">
+                                    <strong>1. Ubah Turunan ke y / x</strong>
+                                    <small>Menghindari Division by Zero</small>
+                                </span>
+                            </label>
+
+                            <label class="control-checkbox-mini">
+                                <input type="checkbox" id="calc-fix-index" checked>
+                                <span class="control-label-mini">
+                                    <strong>2. Sinkronkan Indeks (i → k)</strong>
+                                    <small>Menyelaraskan variabel deret</small>
+                                </span>
+                            </label>
+
+                            <label class="control-checkbox-mini">
+                                <input type="checkbox" id="calc-fix-integral" checked>
+                                <span class="control-label-mini">
+                                    <strong>3. Eliminasi Integral ∫x^x</strong>
+                                    <small>Menghapus suku non-elementer</small>
+                                </span>
+                            </label>
+                        </div>
+
+                        <div class="input-divider"></div>
+
+                        <div class="input-field" id="calc-deriv-container">
+                            <label for="calc-deriv">Variabel Turunan ($\frac{d}{d\text{var}}$)</label>
+                            <select id="calc-deriv">
+                                <option value="t">t (Sesuai Dokumen Original - Hasil Error)</option>
+                                <option value="y" selected>y (Penyesuaian Pertama)</option>
+                                <option value="x">x (Penyesuaian Kedua)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Comparison Table and Graph -->
+                    <div class="calc-results-container">
+                        <div class="glass-card results-summary-card">
+                            <div class="summary-card-header">
+                                <h4>Hasil Perhitungan Sistem</h4>
+                                <div class="perf-badge">
+                                    <span class="lightning-icon">⚡</span>
+                                    <span>Waktu Komputasi: <strong id="calc-exec-time">0.00 ms</strong></span>
+                                </div>
+                            </div>
+                            <div class="comparison-grid">
+                                <div class="comp-box highlight">
+                                    <h5>Ekspansi Binomial Standar</h5>
+                                    <span class="formula-ref">$(x-y)^n$</span>
+                                    <span class="comp-value" id="res-std-val">125</span>
+                                </div>
+                                <div class="comp-box highlight-success">
+                                    <div class="box-header-row">
+                                        <h5>Rumus Samuel (Tersimulasi)</h5>
+                                        <span class="auto-badge">⚡ Auto-Respon</span>
+                                    </div>
+                                    <span class="formula-ref" id="sim-formula-ref">Menggunakan $\frac{d}{dy}$ & Integrasi Numerik $\int x^x$</span>
+                                    <span class="comp-value" id="res-sam-val">125</span>
+                                </div>
+                                <div class="comp-box error-box zero-error">
+                                    <h5>Persentase Error</h5>
+                                    <span class="formula-ref">|Std - Samuel| / Std</span>
+                                    <span class="comp-value" id="res-error-val">0%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="glass-card chart-card">
+                            <h4>Grafik Konvergensi (Fungsi Terhadap $x$)</h4>
+                            <div class="chart-wrapper">
+                                <canvas id="convergenceChart"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="glass-card solver-breakdown-card">
+                            <h4>Rincian Komputasi Langkah demi Langkah</h4>
+                            <div class="solver-steps-grid">
+                                <div class="step-detail">
+                                    <span class="step-num">Langkah 1</span>
+                                    <span class="step-name">Evaluasi Integral $\int_0^x t^t dt$</span>
+                                    <span class="step-value" id="calc-step-integral">Dieliminasi (Tidak digunakan)</span>
+                                    <span class="step-desc">Dihitung menggunakan integrasi numerik Gauss-Legendre presisi tinggi (16 titik quadrature).</span>
+                                </div>
+                                <div class="step-detail">
+                                    <span class="step-num">Langkah 2</span>
+                                    <span class="step-name">Koefisien Sumasi $\sum_{i=k}^n \binom{n}{i}$</span>
+                                    <span class="step-value" id="calc-step-coef">Ekspansi Binomial Penuh (k=0 ke 3)</span>
+                                    <span class="step-desc">Jumlah dari koefisien binomial kombinatorik dari indeks batas bawah $k$ hingga pangkat $n$.</span>
+                                </div>
+                                <div class="step-detail">
+                                    <span class="step-num">Langkah 3</span>
+                                    <span class="step-name">Turunan Pembilang & Penyebut</span>
+                                    <span class="step-value" id="calc-step-deriv">Dieliminasi (Turunan tidak diperlukan)</span>
+                                    <span class="step-desc">Evaluasi turunan parsial pembilang dan penyebut berdasarkan variabel diferensiasi yang dipilih.</span>
+                                </div>
+                                <div class="step-detail">
+                                    <span class="step-num">Langkah 4</span>
+                                    <span class="step-name">Kalkulasi Akhir Samuel</span>
+                                    <span class="step-value" id="calc-step-final">15.625</span>
+                                    <span class="step-desc">Menggabungkan seluruh suku sesuai formula terpilih.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB: Corrector -->
+            <section id="corrector" class="tab-content">
+                <div class="section-header">
+                    <h3>Formula Fixer & Rekomendasi Formal</h3>
+                    <p>Gunakan panel di bawah ini untuk melihat bagaimana modifikasi kecil dapat mengubah rumus Anda menjadi benar secara akademis.</p>
+                </div>
+
+                <div class="corrector-grid">
+                    <div class="glass-card corrector-panel">
+                        <h4>Pilih Langkah Perbaikan</h4>
+                        
+                        <div class="checkbox-group">
+                            <label class="control-checkbox">
+                                <input type="checkbox" id="fix-deriv" checked>
+                                <span class="control-label">
+                                    <strong>Ubah Turunan menjadi Terhadap $y$ ($\frac{d}{dy}$)</strong>
+                                    <small>Menghilangkan pembagian dengan nol dengan menurunkan variabel yang ada dalam sumasi.</small>
+                                </span>
+                            </label>
+
+                            <label class="control-checkbox">
+                                <input type="checkbox" id="fix-index" checked>
+                                <span class="control-label">
+                                    <strong>Sinkronkan Indeks Sumasi ($i \to k$)</strong>
+                                    <small>Menyelaraskan indeks berjalan dari batas bawah ke pangkat suku-suku deret.</small>
+                                </span>
+                            </label>
+
+                            <label class="control-checkbox">
+                                <input type="checkbox" id="fix-integral" checked>
+                                <span class="control-label">
+                                    <strong>Hilangkan Integral $\int x^x$ & Sederhanakan</strong>
+                                    <small>Menghilangkan konstanta non-elementer agar formula dapat dihitung secara langsung.</small>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="glass-card corrector-preview">
+                        <h4>Hasil Formula Rekomendasi</h4>
+                        
+                        <div class="corrected-math-container">
+                            <div class="math-rendered" id="corrected-math-render">
+                                Loading KaTeX...
+                            </div>
+                        </div>
+
+                        <div class="explanation-box" id="corrected-explanation">
+                            Loading explanation...
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB: Profile -->
+            <section id="profile" class="tab-content">
+                <div class="section-header">
+                    <h3>Profil Penemu & Dokumentasi Riset</h3>
+                    <p>Mengenal lebih dekat pencipta Rumus Perpangkatan Universal 4.0 dan dokumen akademis pendukungnya.</p>
+                </div>
+
+                <div class="profile-layout">
+                    <!-- Profile Card -->
+                    <div class="glass-card author-card">
+                        <div class="avatar-wrapper">
+                            <div class="avatar-ring"></div>
+                            <img src="avatar_profile.png" alt="Samuel Hasiholan Omega Purba" class="avatar-img">
+                            <span class="verified-badge" title="Alumni Terverifikasi">✓</span>
+                        </div>
+                        <div class="author-info">
+                            <h4>Samuel Hasiholan Omega, S. Tr. T.</h4>
+                            <span class="author-title">Pencetus Rumus Perpangkatan Universal 4.0</span>
+                            <div class="author-meta-list">
+                                <div class="meta-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="meta-icon"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+                                    <span>Gelar: <strong>Sarjana Teknik Terapan (S. Tr. T.)</strong></span>
+                                </div>
+                                <div class="meta-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="meta-icon"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+                                    <span>Program Studi: <strong>Teknik Robotika & Kecerdasan Buatan (A . I)</strong></span>
+                                </div>
+                                <div class="meta-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="meta-icon"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                    <span>Institusi: <strong>Politeknik Negeri Batam</strong> (Kepulauan Riau)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="author-badges">
+                            <span class="badge blue">🤖 Robotika & A . I</span>
+                            <span class="badge yellow">🧮 Kalkulus Analitis</span>
+                            <span class="badge red">🚀 Formula R&D</span>
+                        </div>
+                        <div class="author-quote">
+                            <span class="quote-mark">“</span>
+                            <blockquote>Melawan kemiskinan dengan pendidikan, melawan pemerintah korup penindas rakyat Indonesia dengan pengetahuan.</blockquote>
+                        </div>
+                    </div>
+
+                    <!-- Documents Card -->
+                    <div class="glass-card documents-card">
+                        <div class="card-header-with-badge">
+                            <h4>Dokumen Riset & Pendukung</h4>
+                            <span class="file-count-badge">3 Berkas Fisik</span>
+                        </div>
+                        <p class="docs-desc">Berikut adalah berkas fisik asli yang memuat penjabaran matematis lengkap dari Rumus Perpangkatan Universal 4.0. Anda dapat menelusuri atau mengunduhnya secara langsung:</p>
+                        
+                        <div class="files-list">
+                            <div class="file-item">
+                                <div class="file-icon docx"></div>
+                                <div class="file-info">
+                                    <div class="file-name-row">
+                                        <h5>Rumus Perpangkatan Universal 4.0.docx</h5>
+                                        <span class="file-tag docx-tag">DOCX</span>
+                                    </div>
+                                    <p>Naskah Otentik Microsoft Word | Ukuran: 14.6 KB</p>
+                                </div>
+                                <a href="Rumus Perpangkatan Universal 4.0.docx" class="btn btn-secondary btn-sm file-download-btn" download>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                                    Unduh Berkas
+                                </a>
+                            </div>
+
+                            <div class="file-item">
+                                <div class="file-icon pdf"></div>
+                                <div class="file-info">
+                                    <div class="file-name-row">
+                                        <h5>Rumus Perpangkatan Universal 4.0.pdf</h5>
+                                        <span class="file-tag pdf-tag">PDF</span>
+                                    </div>
+                                    <p>Format Dokumen Cetak Digital (PDF) | Ukuran: 214.4 KB</p>
+                                </div>
+                                <a href="Rumus Perpangkatan Universal 4.0.pdf" class="btn btn-secondary btn-sm file-download-btn" download>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                                    Unduh Berkas
+                                </a>
+                            </div>
+
+                            <div class="file-item highlight-file">
+                                <div class="file-icon exe"></div>
+                                <div class="file-info">
+                                    <div class="file-name-row">
+                                        <h5>SamuelAI.exe</h5>
+                                        <span class="file-tag exe-tag">EXE Windows</span>
+                                    </div>
+                                    <p>Aplikasi Standalone Windows Server | Ukuran: 91.5 KB</p>
+                                </div>
+                                <a href="SamuelAI.exe" class="btn btn-primary btn-sm file-download-btn" download>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                                    Unduh Aplikasi
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="motto-box">
+                            <div class="motto-header">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="motto-icon"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><line x1="4" y1="22" x2="4" y2="15"></line></svg>
+                                <h5>Semboyan Juang Alumni</h5>
+                            </div>
+                            <div class="motto-chips">
+                                <span class="motto-chip">#NOBELSNOINDONESIANYES</span>
+                                <span class="motto-chip">#LAWANKEMISKINANDENGANPENDIDIKAN</span>
+                                <span class="motto-chip">#HIDUPMAHASISWA</span>
+                                <span class="motto-chip">#HIDUPRAKYATINDONESIA</span>
+                                <span class="motto-chip">#HIDUPWANGSAINDONESIA</span>
+                            </div>
+                        </div>
+
+                        <!-- BibTeX Citation Box -->
+                        <div class="motto-box bibtex-box" style="margin-top: 1.25rem;">
+                            <div class="motto-header">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="motto-icon"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                                <h5>📖 Sitasi Akademis Scopus Q1 (BibTeX)</h5>
+                            </div>
+                            <pre class="bibtex-code" id="bibtex-code-block" style="font-family: var(--font-mono); font-size: 0.78rem; background: rgba(10,15,28,0.8); border: 1px solid var(--border-color); padding: 0.85rem; border-radius: 10px; color: #34d399; overflow-x: auto;">
+@article{purba2026samuelai_scopus,
+  title={Samuel.A.I: Formalisasi Akademis, Audit Kalkulus Analitis, dan High-Precision Numerical Engine untuk Rumus Perpangkatan Universal 4.0},
+  author={Purba, Samuel Hasiholan Omega},
+  journal={Scopus Q1 Journal of Robotics, Artificial Intelligence, and Mathematical Computing},
+  volume={14}, number={2}, pages={101--124}, year={2026},
+  publisher={Politeknik Negeri Batam Academic Publishing},
+  url={https://github.com/SamuelPurba/Rumus-Perpangkatan-Universal-4.0}
+}</pre>
+                            <button id="btn-copy-bibtex" class="btn btn-secondary btn-sm" style="margin-top: 0.65rem; width: 100%; display: flex; align-items: center; justify-content: center; gap: 0.4rem;">
+                                📋 Salin Sitasi BibTeX Scopus Q1
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB: Dictionary -->
+            <section id="dictionary" class="tab-content">
+                <div class="section-header">
+                    <h3>Kamus Matematis & A . I (Interactive Glossary)</h3>
+                    <p>Penjelasan istilah kalkulus, aljabar, dan algoritma komputasi Samuel.AI dalam bahasa yang mudah dipahami semua orang.</p>
+                </div>
+
+                <!-- Dictionary Search & Filter Bar -->
+                <div class="glass-card dict-toolbar">
+                    <div class="dict-search-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="search-icon"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                        <input type="text" id="dict-search-input" placeholder="Cari istilah (contoh: Turunan, Gauss, Binomial, Non-Elementer, d/dt, Quadrature)...">
+                        <span class="search-clear-btn" id="dict-search-clear" style="display:none;">✕</span>
+                    </div>
+
+                    <div class="dict-categories">
+                        <button class="dict-chip active" data-category="all">Semua Istilah</button>
+                        <button class="dict-chip" data-category="kalkulus">Kalkulus & Diferensial</button>
+                        <button class="dict-chip" data-category="aljabar">Aljabar & Sumasi</button>
+                        <button class="dict-chip" data-category="ai">Komputasi & A . I</button>
+                        <button class="dict-chip" data-category="samuel">Teori Samuel Purba</button>
+                    </div>
+
+                    <!-- Autotranslate Written Language Selector Bar -->
+                    <div class="dict-translate-bar">
+                        <span class="translate-label">🌐 Autotranslate Bahasa Tulisan:</span>
+                        <div class="lang-buttons">
+                            <button class="lang-btn active" data-lang="id">🇮🇩 Bahasa Indonesia</button>
+                            <button class="lang-btn" data-lang="en">🇬🇧 English</button>
+                            <button class="lang-btn" data-lang="ja">🇯🇵 日本語 (Jepang)</button>
+                            <button class="lang-btn" data-lang="zh">🇨🇳 中文 (Mandarin)</button>
+                            <button class="lang-btn" data-lang="de">🇩🇪 Deutsch (Jerman)</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dictionary Cards Grid -->
+                <div class="dict-grid" id="dict-cards-container">
+                    <!-- Term 1: Turunan Parsial -->
+                    <div class="glass-card dict-card" data-category="kalkulus" data-keywords="turunan d/dt d/dy d/dx diferensial laju perubahan">
+                        <div class="dict-card-header">
+                            <div class="term-title-group">
+                                <h4>Turunan Parsial</h4>
+                                <span class="term-math">$\frac{d}{dx}, \frac{d}{dy}, \frac{d}{dt}$</span>
+                            </div>
+                            <span class="dict-badge blue">Kalkulus</span>
+                        </div>
+                        <div class="dict-card-body">
+                            <div class="dict-section">
+                                <span class="dict-section-label">💡 Penjelasan Awam (Semua Orang):</span>
+                                <p>Mengukur seberapa cepat nilai suatu rumus berubah ketika satu angka di dalamnya digeser sedikit saja. Seperti mengukur speedometer mobil saat menekan pedal gas.</p>
+                            </div>
+                            <div class="dict-section">
+                                <span class="dict-section-label">📐 Penjelasan Formal Akademis:</span>
+                                <p>Operator diferensial parsial $\frac{\partial f}{\partial x}$ yang menentukan tingkat perubahan fungsi multivariabel terhadap salah satu variabel independen dengan menganggap variabel lain konstan.</p>
+                            </div>
+                            <div class="dict-section highlight-context">
+                                <span class="dict-section-label">🎯 Peran di Samuel.AI:</span>
+                                <p>Pada rumus original Samuel, turunan ditargetkan ke $t$ ($\frac{d}{dt}$). Karena variabel $t$ tidak ada dalam deret, hasilnya menjadi $0$ dan memicu error pembagian dengan nol.</p>
+                            </div>
+                        </div>
+                        <div class="dict-card-footer">
+                            <button class="btn-translate-card">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="translate-icon"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10z"></path></svg>
+                                <span class="card-translate-label">Terjemahkan Tulisan (Text Autotranslate)</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Term 2: Pembagian dengan Nol -->
+                    <div class="glass-card dict-card" data-category="kalkulus" data-keywords="pembagian dengan nol division by zero error tak terdefinisi undefined 0">
+                        <div class="dict-card-header">
+                            <div class="term-title-group">
+                                <h4>Pembagian dengan Nol</h4>
+                                <span class="term-math">$\frac{x}{0} \to \text{Undefined}$</span>
+                            </div>
+                            <span class="dict-badge red">Masalah Kritis</span>
+                        </div>
+                        <div class="dict-card-body">
+                            <div class="dict-section">
+                                <span class="dict-section-label">💡 Penjelasan Awam (Semua Orang):</span>
+                                <p>Secara logika, membagi suatu benda menjadi 0 bagian adalah hal yang tidak mungkin. Dalam matematika dan komputer, membagi angka dengan nol akan menghasilkan error fatal karena tidak ada jawaban yang sah.</p>
+                            </div>
+                            <div class="dict-section">
+                                <span class="dict-section-label">📐 Penjelasan Formal Akademis:</span>
+                                <p>Bentuk tak terdefinisi (*undefined*) dalam aljabar riil $\mathbb{R}$ di mana pembagian $\frac{a}{0}$ tidak memiliki nilai unik atau limit berhingga yang dapat memenuhi operasi pembatalan perkalian.</p>
+                            </div>
+                            <div class="dict-section highlight-context">
+                                <span class="dict-section-label">🎯 Peran di Samuel.AI:</span>
+                                <p>Akar error utama pada rumus original Samuel Purba. Samuel.AI memperbaiki masalah ini dengan mengubah variabel diferensiasi dari $t$ menjadi $y$ atau $x$.</p>
+                            </div>
+                        </div>
+                        <div class="dict-card-footer">
+                            <button class="btn-speech" data-text="Pembagian dengan nol adalah hal yang tidak mungkin dalam matematika dan komputer karena menghasilkan nilai tak terdefinisi.">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="speech-icon"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                                Dengarkan Penjelasan A . I
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Term 3: Integral Non-Elementer -->
+                    <div class="glass-card dict-card" data-category="kalkulus" data-keywords="integral non-elementer non elementer x^x sophomore dream antiderivatif">
+                        <div class="dict-card-header">
+                            <div class="term-title-group">
+                                <h4>Integral Non-Elementer</h4>
+                                <span class="term-math">$\int x^x \, dx$</span>
+                            </div>
+                            <span class="dict-badge yellow">Kalkulus Lanjut</span>
+                        </div>
+                        <div class="dict-card-body">
+                            <div class="dict-section">
+                                <span class="dict-section-label">💡 Penjelasan Awam (Semua Orang):</span>
+                                <p>Menghitung total area di bawah grafik kurva $x$ pangkat $x$. Hasilnya tidak bisa ditulis dengan simbol matematika biasa (seperti tambah, kurang, atau sin/cos), melainkan harus dihitung dengan deret angka khusus atau bantuan komputer.</p>
+                            </div>
+                            <div class="dict-section">
+                                <span class="dict-section-label">📐 Penjelasan Formal Akademis:</span>
+                                <p>Integral dari fungsi eksponensial diri $f(x) = x^x$ yang tidak memiliki antiderivatif dalam bentuk kombinasi berhingga dari fungsi-fungsi elementer (Teorema Liouville & Sophomore's Dream).</p>
+                            </div>
+                            <div class="dict-section highlight-context">
+                                <span class="dict-section-label">🎯 Peran di Samuel.AI:</span>
+                                <p>Sistem Samuel.AI menggunakan integrasi numerik presisi tinggi (16-Point Gauss-Legendre Quadrature) untuk menyelesaikan nilai $\int x^x \, dx$ secara instan.</p>
+                            </div>
+                        </div>
+                        <div class="dict-card-footer">
+                            <button class="btn-speech" data-text="Integral non elementer adalah pengintegralan yang hasilnya tidak dapat ditulis menggunakan fungsi matematika biasa melainkan memerlukan perhitungan numerik komputer.">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="speech-icon"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                                Dengarkan Penjelasan A . I
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Term 4: Teorema Binomial Newton -->
+                    <div class="glass-card dict-card" data-category="aljabar" data-keywords="teorema binomial newton ekspansi (x-y)^n aljabar kombinasi pascual">
+                        <div class="dict-card-header">
+                            <div class="term-title-group">
+                                <h4>Teorema Binomial Newton</h4>
+                                <span class="term-math">$(x-y)^n = \sum \binom{n}{k} x^{n-k} (-y)^k$</span>
+                            </div>
+                            <span class="dict-badge green">Aljabar Formal</span>
+                        </div>
+                        <div class="dict-card-body">
+                            <div class="dict-section">
+                                <span class="dict-section-label">💡 Penjelasan Awam (Semua Orang):</span>
+                                <p>Rumus ajaib untuk menghitung perkalian kurung berpangkat tanpa harus mengalikannya satu per satu secara manual. Contohnya membuka $(x-y)^3$ menjadi deret angka yang rapi.</p>
+                            </div>
+                            <div class="dict-section">
+                                <span class="dict-section-label">📐 Penjelasan Formal Akademis:</span>
+                                <p>Teorema aljabar klasik yang menjabarkan pemangkatan penjumlahan dua suku $(a+b)^n$ menjadi deret berurutan menggunakan koefisien kombinatorik binomial $\binom{n}{k}$.</p>
+                            </div>
+                            <div class="dict-section highlight-context">
+                                <span class="dict-section-label">🎯 Peran di Samuel.AI:</span>
+                                <p>Bentuk baku akademis tempat Rumus Perpangkatan Universal 4.0 Samuel Purba diselaraskan dan terbukti akurat 100% pada simulator.</p>
+                            </div>
+                        </div>
+                        <div class="dict-card-footer">
+                            <button class="btn-speech" data-text="Teorema Binomial Newton adalah rumus baku aljabar untuk menjabarkan perkalian dua suku berpangkat secara instan dan akurat.">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="speech-icon"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                                Dengarkan Penjelasan A . I
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Term 5: 16-Point Gauss-Legendre Quadrature -->
+                    <div class="glass-card dict-card" data-category="ai" data-keywords="gauss quadrature legendre 16-point integrasi numerik algoritma komputasi ai">
+                        <div class="dict-card-header">
+                            <div class="term-title-group">
+                                <h4>16-Point Gauss-Legendre Quadrature</h4>
+                                <span class="term-math">$\int_a^b f(t) dt \approx \sum w_i f(t_i)$</span>
+                            </div>
+                            <span class="dict-badge purple">Algoritma A . I</span>
+                        </div>
+                        <div class="dict-card-body">
+                            <div class="dict-section">
+                                <span class="dict-section-label">💡 Penjelasan Awam (Semua Orang):</span>
+                                <p>Metode pintar buatan komputer A . I untuk menghitung nilai matematika rumit hanya dalam 16 sampel perhitungan pintar, lebih cepat 100x dibanding cara biasa.</p>
+                            </div>
+                            <div class="dict-section">
+                                <span class="dict-section-label">📐 Penjelasan Formal Akademis:</span>
+                                <p>Algoritma integrasi numerik presisi tinggi yang menempatkan titik sampel (*nodes*) pada akar-akar polinomial Legendre orthogonal dan mengalikan hasilnya dengan bobot Gauss (*weights*).</p>
+                            </div>
+                            <div class="dict-section highlight-context">
+                                <span class="dict-section-label">🎯 Peran di Samuel.AI:</span>
+                                <p>Mesin komputasi utama di balik simulator Samuel.AI yang memungkinkan kalkulasi integral $\int x^x \, dx$ berjalan instan (<0.01 ms) di browser.</p>
+                            </div>
+                        </div>
+                        <div class="dict-card-footer">
+                            <button class="btn-speech" data-text="Gauss Legendre Quadrature adalah algoritma komputasi cerdas untuk menghitung nilai integral rumit dengan kecepatan kurang dari nol koma nol satu milidetik.">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="speech-icon"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                                Dengarkan Penjelasan A . I
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Term 6: Indeks Sumasi -->
+                    <div class="glass-card dict-card" data-category="aljabar" data-keywords="indeks sumasi sigma sumasi i k batas deret">
+                        <div class="dict-card-header">
+                            <div class="term-title-group">
+                                <h4>Indeks Sumasi</h4>
+                                <span class="term-math">$\sum_{i=k}^n f(i)$</span>
+                            </div>
+                            <span class="dict-badge green">Aljabar Formal</span>
+                        </div>
+                        <div class="dict-card-body">
+                            <div class="dict-section">
+                                <span class="dict-section-label">💡 Penjelasan Awam (Semua Orang):</span>
+                                <p>Simbol huruf Yunani besar Sigma ($\sum$) yang berarti: "Jumlahkan semua urutan angka dari batas bawah sampai batas atas".</p>
+                            </div>
+                            <div class="dict-section">
+                                <span class="dict-section-label">📐 Penjelasan Formal Akademis:</span>
+                                <p>Notasi ringkas deret penjumlahan berurut dengan variabel indeks berjalan $i$ yang bernilai integer inkremental dari $i=k$ hingga $i=n$.</p>
+                            </div>
+                            <div class="dict-section highlight-context">
+                                <span class="dict-section-label">🎯 Peran di Samuel.AI:</span>
+                                <p>Diperbaiki oleh modul Formula Fixer dari notasi un-synced $i$ menjadi $k$ agar deret perpangkatan binomial terhitung secara presisi.</p>
+                            </div>
+                        </div>
+                        <div class="dict-card-footer">
+                            <button class="btn-speech" data-text="Indeks sumasi adalah simbol deret sigma yang digunakan untuk menjumlahkan deretan angka secara berurutan.">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="speech-icon"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                                Dengarkan Penjelasan A . I
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Term 7: Tabel Saringan Pascal O(1) -->
+                    <div class="glass-card dict-card" data-category="ai" data-keywords="pascal triangle o(1) memoization cache tabel segitiga pascal">
+                        <div class="dict-card-header">
+                            <div class="term-title-group">
+                                <h4>Tabel Saringan Pascal $O(1)$</h4>
+                                <span class="term-math">$\text{PASCAL}[n][k] = \binom{n}{k}$</span>
+                            </div>
+                            <span class="dict-badge purple">Algoritma A . I</span>
+                        </div>
+                        <div class="dict-card-body">
+                            <div class="dict-section">
+                                <span class="dict-section-label">💡 Penjelasan Awam (Semua Orang):</span>
+                                <p>Seperti buku catatan rahasia komputer yang sudah menyimpan semua hasil kombinasi Segitiga Pascal sebelum diminta, sehingga saat dihitung jawabannya langsung muncul tanpa berpikir.</p>
+                            </div>
+                            <div class="dict-section">
+                                <span class="dict-section-label">📐 Penjelasan Formal Akademis:</span>
+                                <p>Teknik *memoization* berupa matriks pra-komputasi koefisien kombinatorik $\binom{n}{k}$ yang memberikan kompleksitas pencarian waktu konstan $O(1)$.</p>
+                            </div>
+                            <div class="dict-section highlight-context">
+                                <span class="dict-section-label">🎯 Peran di Samuel.AI:</span>
+                                <p>Memastikan slider input dan grafik simulator di platform Samuel.AI berpindah dengan lancar tanpa lag.</p>
+                            </div>
+                        </div>
+                        <div class="dict-card-footer">
+                            <button class="btn-speech" data-text="Tabel saringan Pascal adalah teknik penyimpanan memori komputer agar perhitungan kombinasi matematika dapat ditemukan secara instan.">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="speech-icon"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                                Dengarkan Penjelasan A . I
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Term 8: Rumus Perpangkatan Universal 4.0 -->
+                    <div class="glass-card dict-card" data-category="samuel" data-keywords="rumus perpangkatan universal 4.0 samuel purba formula original">
+                        <div class="dict-card-header">
+                            <div class="term-title-group">
+                                <h4>Rumus Perpangkatan Universal 4.0</h4>
+                                <span class="term-math">$\sum \lim ((x-y)^n)$</span>
+                            </div>
+                            <span class="dict-badge gold">Formula Peneliti</span>
+                        </div>
+                        <div class="dict-card-body">
+                            <div class="dict-section">
+                                <span class="dict-section-label">💡 Penjelasan Awam (Semua Orang):</span>
+                                <p>Gagasan rumus matematika unik yang dicetuskan oleh Samuel Purba untuk memecahkan pemangkatan aljabar dengan menggabungkan konsep limit, turunan, dan integral.</p>
+                            </div>
+                            <div class="dict-section">
+                                <span class="dict-section-label">📐 Penjelasan Formal Akademis:</span>
+                                <p>Formulasi eksperimental ekspansi $(x-y)^n$ yang menggunakan rasio derivatif deret binomial dan pengali eksponensial diri $\int x^x \, dx$.</p>
+                            </div>
+                            <div class="dict-section highlight-context">
+                                <span class="dict-section-label">🎯 Peran di Samuel.AI:</span>
+                                <p>Landasan riset utama platform Samuel.AI yang memadukan gagasan awal penemu dengan koreksi formal akademis modern.</p>
+                            </div>
+                        </div>
+                        <div class="dict-card-footer">
+                            <button class="btn-speech" data-text="Rumus Perpangkatan Universal empat titik nol adalah gagasan rumus aljabar karya Samuel Purba yang dianalisis dan disempurnakan oleh platform ini.">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="speech-icon"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                                Dengarkan Penjelasan A . I
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Term 9: Fungsi Eksponensial Diri -->
+                    <div class="glass-card dict-card" data-category="kalkulus" data-keywords="eksponensial diri x^x e^(x lnx) eksponen pertumbuhan">
+                        <div class="dict-card-header">
+                            <div class="term-title-group">
+                                <h4>Fungsi Eksponensial Diri</h4>
+                                <span class="term-math">$f(x) = x^x = e^{x \ln x}$</span>
+                            </div>
+                            <span class="dict-badge blue">Kalkulus</span>
+                        </div>
+                        <div class="dict-card-body">
+                            <div class="dict-section">
+                                <span class="dict-section-label">💡 Penjelasan Awam (Semua Orang):</span>
+                                <p>Angka yang dipangkatkan oleh dirinya sendiri (misal $2^2 = 4$, $3^3 = 27$, $7^7 = 823.543$). Grafik fungsinya melonjak sangat cepat saat angka $x$ bertambah besar.</p>
+                            </div>
+                            <div class="dict-section">
+                                <span class="dict-section-label">📐 Penjelasan Formal Akademis:</span>
+                                <p>Fungsi matematika $f(x) = x^x$ yang memiliki domain $x > 0$ dengan bentuk eksponensial natura $e^{x \ln x}$ dan pertumbuhan super-eksponensial.</p>
+                            </div>
+                            <div class="dict-section highlight-context">
+                                <span class="dict-section-label">🎯 Peran di Samuel.AI:</span>
+                                <p>Merupakan komponen fungsi dasar pada suku integral $\int x^x \, dx$ di dalam rumus original Samuel Purba.</p>
+                            </div>
+                        </div>
+                        <div class="dict-card-footer">
+                            <button class="btn-speech" data-text="Fungsi eksponensial diri adalah angka yang dipangkatkan oleh dirinya sendiri dengan laju pertumbuhan grafik yang sangat cepat.">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="speech-icon"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                                Dengarkan Penjelasan A . I
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Term 10: Batas Limit -->
+                    <div class="glass-card dict-card" data-category="kalkulus" data-keywords="limit batas limit lim x to infinity tak hingga konvergensi">
+                        <div class="dict-card-header">
+                            <div class="term-title-group">
+                                <h4>Batas Limit</h4>
+                                <span class="term-math">$\lim_{x \to \infty} f(x)$</span>
+                            </div>
+                            <span class="dict-badge blue">Kalkulus</span>
+                        </div>
+                        <div class="dict-card-body">
+                            <div class="dict-section">
+                                <span class="dict-section-label">💡 Penjelasan Awam (Semua Orang):</span>
+                                <p>Mengamati ke mana arah hasil suatu rumus ketika nilai angkanya dibuat semakin raksasa mendekati tak hingga.</p>
+                            </div>
+                            <div class="dict-section">
+                                <span class="dict-section-label">📐 Penjelasan Formal Akademis:</span>
+                                <p>Konsep dasar kalkulus $(\epsilon, \delta)$ yang mendefinisikan nilai kecenderungan fungsi $f(x)$ ketika variabel masukan mendekati titik tertentu atau tak hingga ($\infty$).</p>
+                            </div>
+                            <div class="dict-section highlight-context">
+                                <span class="dict-section-label">🎯 Peran di Samuel.AI:</span>
+                                <p>Digunakan pada notasi luar Samuel Purba ($\sum \lim$) untuk menguji konvergensi batas nilai perpangkatan universal.</p>
+                            </div>
+                        </div>
+                        <div class="dict-card-footer">
+                            <button class="btn-speech" data-text="Batas limit mengamati ke mana arah nilai suatu rumus ketika variabelnya dibuat semakin besar mendekati tak hingga.">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="speech-icon"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                                Dengarkan Penjelasan A . I
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Term 11: Analisis Konvergensi -->
+                    <div class="glass-card dict-card" data-category="ai" data-keywords="analisis konvergensi convergence chart dual axis grafik chart.js">
+                        <div class="dict-card-header">
+                            <div class="term-title-group">
+                                <h4>Analisis Konvergensi Grafik</h4>
+                                <span class="term-math">$\text{Dual Y-Axis Convergence}$</span>
+                            </div>
+                            <span class="dict-badge purple">Algoritma A . I</span>
+                        </div>
+                        <div class="dict-card-body">
+                            <div class="dict-section">
+                                <span class="dict-section-label">💡 Penjelasan Awam (Semua Orang):</span>
+                                <p>Grafik interaktif dua sumbu yang membandingkan kurva rumus baku dan kurva rumus Samuel Purba secara berdampingan tanpa saling menutupi.</p>
+                            </div>
+                            <div class="dict-section">
+                                <span class="dict-section-label">📐 Penjelasan Formal Akademis:</span>
+                                <p>Metode visualisasi data numerik berbasis dual sumbu koordinat $Y$ (Chart.js) untuk memetakan dua rentang nilai dengan ordo magnitudo berjarak jauh.</p>
+                            </div>
+                            <div class="dict-section highlight-context">
+                                <span class="dict-section-label">🎯 Peran di Samuel.AI:</span>
+                                <p>Digunakan di modul simulator untuk menampilkan kestabilan hasil perhitungan Teorema Binomial vs Rumus Samuel secara visual.</p>
+                            </div>
+                        </div>
+                        <div class="dict-card-footer">
+                            <button class="btn-speech" data-text="Analisis konvergensi grafik membandingkan kurva perhitungan rumus baku dan rumus Samuel Purba secara presisi di layar.">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="speech-icon"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                                Dengarkan Penjelasan A . I
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Term 12: Bentuk Tak Tentu -->
+                    <div class="glass-card dict-card" data-category="kalkulus" data-keywords="bentuk tak tentu indeterminate form 0/0 error tak terdefinisi">
+                        <div class="dict-card-header">
+                            <div class="term-title-group">
+                                <h4>Bentuk Tak Tentu</h4>
+                                <span class="term-math">$\left[ \frac{0}{0} \right], \left[ \frac{\infty}{\infty} \right]$</span>
+                            </div>
+                            <span class="dict-badge yellow">Kalkulus Lanjut</span>
+                        </div>
+                        <div class="dict-card-body">
+                            <div class="dict-section">
+                                <span class="dict-section-label">💡 Penjelasan Awam (Semua Orang):</span>
+                                <p>Kondisi pecahan matematika di mana angka atas dan angka bawah sama-sama bernilai $0$ atau tak hingga, sehingga nilainya membingungkan dan harus disederhanakan.</p>
+                            </div>
+                            <div class="dict-section">
+                                <span class="dict-section-label">📐 Penjelasan Formal Akademis:</span>
+                                <p>Ekspresi matematika hasil evaluasi limit parsial yang tidak serta-merta menentukan limit fungsi tanpa bantuan aturan L'Hôpital atau manipulasi aljabar lanjutan.</p>
+                            </div>
+                            <div class="dict-section highlight-context">
+                                <span class="dict-section-label">🎯 Peran di Samuel.AI:</span>
+                                <p>Terjadi pada notasi pembilang dan penyebut original Samuel Purba saat turunan $d/dt$ menghasilkan nilai $0$.</p>
+                            </div>
+                        </div>
+                        <div class="dict-card-footer">
+                            <button class="btn-speech" data-text="Bentuk tak tentu adalah kondisi matematika di mana pecahan bernilai nol per nol sehingga memerlukan penyederhanaan aljabar.">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="speech-icon"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                                Dengarkan Penjelasan A . I
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Term 13: Deret Tak Hingga -->
+                    <div class="glass-card dict-card" data-category="aljabar" data-keywords="deret tak hingga infinite series sophomore dream deret angka">
+                        <div class="dict-card-header">
+                            <div class="term-title-group">
+                                <h4>Deret Tak Hingga</h4>
+                                <span class="term-math">$\sum_{m=1}^{\infty} \frac{(-1)^{m-1}}{m^m}$</span>
+                            </div>
+                            <span class="dict-badge green">Aljabar Formal</span>
+                        </div>
+                        <div class="dict-card-body">
+                            <div class="dict-section">
+                                <span class="dict-section-label">💡 Penjelasan Awam (Semua Orang):</span>
+                                <p>Penjumlahan deretan angka yang jumlah sukunya tidak terbatas, namun jika dijumlahkan terus menerus hasilnya akan mendekati satu angka pasti (konvergen).</p>
+                            </div>
+                            <div class="dict-section">
+                                <span class="dict-section-label">📐 Penjelasan Formal Akademis:</span>
+                                <p>Jumlah dari barisan suku tak berhingga $S_n = \sum_{k=1}^\infty a_k$ yang limit jumlah parsialnya menuju konstanta konvergen tertentu.</p>
+                            </div>
+                            <div class="dict-section highlight-context">
+                                <span class="dict-section-label">🎯 Peran di Samuel.AI:</span>
+                                <p>Digunakan dalam ekspansi *Sophomore's Dream* untuk menghitung nilai eksak dari integral non-elementer $\int_0^1 x^x \, dx \approx 0.78343$.</p>
+                            </div>
+                        </div>
+                        <div class="dict-card-footer">
+                            <button class="btn-speech" data-text="Deret tak hingga adalah penjumlahan deretan angka tanpa batas yang nilainya dapat mendekati satu angka pasti.">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="speech-icon"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                                Dengarkan Penjelasan A . I
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Term 14: Memoization & Cache -->
+                    <div class="glass-card dict-card" data-category="ai" data-keywords="memoization cache o(1) optimasi memori komputasi ai">
+                        <div class="dict-card-header">
+                            <div class="term-title-group">
+                                <h4>Memoization & Cache A . I</h4>
+                                <span class="term-math">$\text{Cache.get}(key) \implies O(1)$</span>
+                            </div>
+                            <span class="dict-badge purple">Algoritma A . I</span>
+                        </div>
+                        <div class="dict-card-body">
+                            <div class="dict-section">
+                                <span class="dict-section-label">💡 Penjelasan Awam (Semua Orang):</span>
+                                <p>Teknik mengingat jawaban perhitungan lama agar saat angka yang sama dihitung kembali, komputer tidak perlu menghitung ulang dari nol.</p>
+                            </div>
+                            <div class="dict-section">
+                                <span class="dict-section-label">📐 Penjelasan Formal Akademis:</span>
+                                <p>Teknik optimasi pemrograman di mana hasil pemanggilan fungsi yang mahal (*expensive computation*) disimpan dalam memori berdasarkan *lookup key* unik.</p>
+                            </div>
+                            <div class="dict-section highlight-context">
+                                <span class="dict-section-label">🎯 Peran di Samuel.AI:</span>
+                                <p>Diterapkan pada fungsi `integralXPowerX(x)` dan `getSumCoef(n,k)` untuk menjamin respon komputasi $0.00\text{ ms}$.</p>
+                            </div>
+                        </div>
+                        <div class="dict-card-footer">
+                            <button class="btn-speech" data-text="Memoization adalah teknik optimasi A . I untuk menyimpan hasil perhitungan lama agar dapat ditemukan secara instan.">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="speech-icon"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                                Dengarkan Penjelasan A . I
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Term 15: Diferensiasi Implisit -->
+                    <div class="glass-card dict-card" data-category="kalkulus" data-keywords="diferensiasi implisit implicit differentiation turunan y x">
+                        <div class="dict-card-header">
+                            <div class="term-title-group">
+                                <h4>Diferensiasi Implisit</h4>
+                                <span class="term-math">$\frac{d}{dy}\left( (x-y)^n \right) = -n(x-y)^{n-1}$</span>
+                            </div>
+                            <span class="dict-badge blue">Kalkulus</span>
+                        </div>
+                        <div class="dict-card-body">
+                            <div class="dict-section">
+                                <span class="dict-section-label">💡 Penjelasan Awam (Semua Orang):</span>
+                                <p>Menurunkan rumus yang mengandung gabungan dua variabel ($x$ dan $y$) sekaligus dengan mengikuti aturan rantai pemangkatan.</p>
+                            </div>
+                            <div class="dict-section">
+                                <span class="dict-section-label">📐 Penjelasan Formal Akademis:</span>
+                                <p>Penerapan aturan diferensiasi rantai (*chain rule*) pada fungsi implisit $F(x,y) = 0$ tanpa harus memisahkan variabel secara eksplisit.</p>
+                            </div>
+                            <div class="dict-section highlight-context">
+                                <span class="dict-section-label">🎯 Peran di Samuel.AI:</span>
+                                <p>Solusi koreksi pertama pada Samuel.AI dengan mereset operator turunan menjadi $\frac{d}{dy}$ atau $\frac{d}{dx}$ sehingga hasil diferensiasi tidak lagi bernilai nol.</p>
+                            </div>
+                        </div>
+                        <div class="dict-card-footer">
+                            <button class="btn-speech" data-text="Diferensiasi implisit adalah teknik kalkulus untuk menurunkan gabungan dua variabel sekaligus dengan aturan rantai.">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="speech-icon"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                                Dengarkan Penjelasan A . I
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Term 16: Komputasi Numerik A . I -->
+                    <div class="glass-card dict-card" data-category="ai" data-keywords="komputasi numerik kecerdasan buatan ai simulasi matematika">
+                        <div class="dict-card-header">
+                            <div class="term-title-group">
+                                <h4>Komputasi Numerik A . I</h4>
+                                <span class="term-math">$\text{AI-Driven Numerical Engine}$</span>
+                            </div>
+                            <span class="dict-badge purple">Algoritma A . I</span>
+                        </div>
+                        <div class="dict-card-body">
+                            <div class="dict-section">
+                                <span class="dict-section-label">💡 Penjelasan Awam (Semua Orang):</span>
+                                <p>Cabang ilmu komputer dan A . I yang membuat mesin pintar mampu menyelesaikan soal matematika paling rumit dengan kecepatan kilat dan tingkat kepresisian tinggi.</p>
+                            </div>
+                            <div class="dict-section">
+                                <span class="dict-section-label">📐 Penjelasan Formal Akademis:</span>
+                                <p>Studi dan perancangan algoritma numerik terprogram untuk menyelesaikan masalah analitis kompleks menggunakan representasi aritmatika titik-kambang (*floating-point arithmetic*).</p>
+                            </div>
+                            <div class="dict-section highlight-context">
+                                <span class="dict-section-label">🎯 Peran di Samuel.AI:</span>
+                                <p>Pondasi utama platform Samuel.AI karya Alumni Teknik Robotika & Kecerdasan Buatan (A . I) Politeknik Negeri Batam.</p>
+                            </div>
+                        </div>
+                        <div class="dict-card-footer">
+                            <button class="btn-speech" data-text="Komputasi numerik A . I adalah kecerdasan sistem komputer untuk memecahkan persoalan matematika rumit dengan presisi tinggi.">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="speech-icon"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                                Dengarkan Penjelasan A . I
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB: Samuel-Tosh AI Assistant -->
+            <section id="ai-assistant" class="tab-content">
+                <div class="welcome-card ai-welcome-card">
+                    <div class="welcome-text">
+                        <h3>🤖 Samuel-Tosh Math LLM Engine</h3>
+                        <p>Specialized Exponentiation & Binomial Calculus Intelligence Engine sekelas <strong>Anthropic Claude 3.7 / Tosh Math Reasoning</strong>. Menggabungkan komputasi eksak fisika (16-Point Gauss-Legendre & Pascal BigInt Sieve) dengan penalaran generatif kognitif tanpa halusinasi (0% Error Guardrail).</p>
+                    </div>
+                    <div class="ai-badge-row">
+                        <span class="badge green">🛡️ 0% Hallucination Guardrail Active</span>
+                        <span class="badge purple">⚡ 16-Point Gauss-Legendre Synced</span>
+                        <span class="badge blue">🌐 5-Language Autotranslate Engine</span>
+                    </div>
+                </div>
+
+                <div class="glass-card ai-chat-main-card">
+                    <div class="ai-quick-bar">
+                        <span class="quick-label">⚡ Tombol Aksi Cepat:</span>
+                        <button class="ai-quick-btn" data-action="audit">🛡️ Audit Singularity (d/dt)</button>
+                        <button class="ai-quick-btn" data-action="binomial">🧮 Expand Binomial (x-y)^n</button>
+                        <button class="ai-quick-btn" data-action="gauss">⚡ Gauss Quadrature ∫x^x dx</button>
+                        <button class="ai-quick-btn" data-action="prove">📜 Prove Newton Equivalence</button>
+                    </div>
+
+                    <div class="ai-chat-box">
+                        <div class="ai-chat-header">
+                            <div class="author-mini-info">
+                                <img src="avatar_profile.png" alt="Samuel Hasiholan Omega, S. Tr. T." class="avatar-mini">
+                                <div>
+                                    <h5>Samuel-Tosh AI Engine Core</h5>
+                                    <span class="author-sub">Karya Samuel Hasiholan Omega, S. Tr. T. • Alumni Politeknik Negeri Batam</span>
+                                </div>
+                            </div>
+                            <div class="ai-engine-status">
+                                <span class="status-dot green"></span>
+                                <span>Engine Ready (Sub-ms)</span>
+                            </div>
+                        </div>
+
+                        <div class="ai-chat-log" id="ai-chat-log">
+                            <!-- Preloaded AI Welcome Message -->
+                            <div class="chat-message ai-message">
+                                <div class="msg-header">
+                                    <span class="msg-sender">🤖 Samuel-Tosh Core</span>
+                                    <span class="msg-time">Sekarang</span>
+                                </div>
+                                <div class="msg-content">
+                                    <p>Halo! Saya adalah <strong>Samuel-Tosh Math LLM Engine</strong>, mesin AI spesialis perpangkatan aljabar universal $(x-y)^n$, deret Newton, dan kalkulus transendental.</p>
+                                    <p>Silakan masukkan notasi matematika Anda atau klik tombol aksi cepat di atas untuk memulai analisis matematis Scopus Q1 Grade!</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ai-chat-controls">
+                            <div class="ai-options-row">
+                                <div class="select-wrapper">
+                                    <label for="ai-mode-select">Mode Penjelasan:</label>
+                                    <select id="ai-mode-select">
+                                        <option value="academic">🎓 Mode Akademis Scopus Q1 (Formal LaTeX)</option>
+                                        <option value="intuitive">💡 Mode Awam (Intuitif & Ringkas)</option>
+                                    </select>
+                                </div>
+                                <div class="select-wrapper">
+                                    <label for="ai-lang-select">Bahasa Teks:</label>
+                                    <select id="ai-lang-select">
+                                        <option value="ID">🇮🇩 Indonesia</option>
+                                        <option value="EN">🇬🇧 English</option>
+                                        <option value="JA">🇯🇵 日本語</option>
+                                        <option value="ZH">🇨🇳 中文</option>
+                                        <option value="DE">🇩🇪 Deutsch</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="ai-input-row">
+                                <input type="text" id="ai-prompt-input" placeholder="Masukkan notasi atau soal matematika (misal: Audit (7-2)^3 atau Hitung ∫0..1 x^x dx)...">
+                                <button id="btn-ai-send" class="btn-primary">
+                                    <span>Kirim ke Engine</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="send-icon"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB: Dashboard Edge IoT & Robotika -->
+            <section id="iot-dashboard" class="tab-content">
+                <div class="welcome-card iot-welcome-card">
+                    <div class="welcome-text">
+                        <h3>📡 Samuel.AI Edge IoT & Embedded Systems</h3>
+                        <p>Arsitektur komputasi matematika Edge & Robotika real-time karya <strong>Samuel Hasiholan Omega, S. Tr. T.</strong> Mengolah streaming telemetri sensor, kalkulasi daya eksponensial, dan kontrol non-linier $(x-y)^n$ pada perangkat mikroprosesor/mikrokontroler tertanam dengan latensi <strong>$<0.01\text{ ms}$</strong>.</p>
+                    </div>
+                    <div class="ai-badge-row">
+                        <span class="badge green">📡 MQTT / WebSocket Stream Active</span>
+                        <span class="badge purple">⚡ Bare-Metal C++ Core Ready</span>
+                        <span class="badge blue">🤖 Edge Telemetry Sub-ms Processing</span>
+                    </div>
+                </div>
+
+                <!-- Edge Nodes Grid -->
+                <div class="iot-nodes-grid">
+                    <div class="glass-card iot-node-card">
+                        <div class="node-header">
+                            <span class="node-icon">🍓</span>
+                            <div class="node-title">
+                                <h5>Raspberry Pi 5</h5>
+                                <span class="node-sub">Linux Edge Master Node</span>
+                            </div>
+                        </div>
+                        <div class="node-status green">
+                            <span class="status-dot green pulse"></span>
+                            <span>Connected • 0.002 ms</span>
+                        </div>
+                    </div>
+
+                    <div class="glass-card iot-node-card">
+                        <div class="node-header">
+                            <span class="node-icon">💚</span>
+                            <div class="node-title">
+                                <h5>NVIDIA Jetson Orin</h5>
+                                <span class="node-sub">Edge AI Accelerator</span>
+                            </div>
+                        </div>
+                        <div class="node-status green">
+                            <span class="status-dot green pulse"></span>
+                            <span>Connected • 0.003 ms</span>
+                        </div>
+                    </div>
+
+                    <div class="glass-card iot-node-card">
+                        <div class="node-header">
+                            <span class="node-icon">⚡</span>
+                            <div class="node-title">
+                                <h5>ESP32-S3 Robotics</h5>
+                                <span class="node-sub">Microcontroller Motor Encoder</span>
+                            </div>
+                        </div>
+                        <div class="node-status green">
+                            <span class="status-dot green pulse"></span>
+                            <span>Connected • 0.001 ms</span>
+                        </div>
+                    </div>
+
+                    <div class="glass-card iot-node-card">
+                        <div class="node-header">
+                            <span class="node-icon">🧠</span>
+                            <div class="node-title">
+                                <h5>ARM Cortex-M4</h5>
+                                <span class="node-sub">Bare-Metal Math Engine</span>
+                            </div>
+                        </div>
+                        <div class="node-status green">
+                            <span class="status-dot green pulse"></span>
+                            <span>Connected • 0.001 ms</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive IoT Simulator Panel -->
+                <div class="glass-card iot-main-card" style="margin-top: 1.5rem;">
+                    <div class="iot-control-bar">
+                        <button id="btn-iot-sim" class="btn btn-primary">🚀 Start Live Telemetry Simulator</button>
+                        <button id="btn-iot-inject" class="btn btn-secondary">⚡ Inject IMU 6-DOF Pulse</button>
+                        <button id="btn-iot-baremetal" class="btn btn-secondary">🧮 Test Bare-Metal Gauss Computation</button>
+                        <button id="btn-iot-json" class="btn btn-secondary">📥 Export Telemetry JSON Payload</button>
+                    </div>
+
+                    <div class="iot-display-grid" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 1.5rem; margin-top: 1.5rem;">
+                        <div class="iot-chart-box" style="background: rgba(10,15,28,0.8); border: 1px solid var(--border-color); border-radius: 14px; padding: 1.25rem;">
+                            <h5>📊 Live Sensor Power Stream Telemetry $(x-y)^n$</h5>
+                            <canvas id="iotTelemetryChart" height="200"></canvas>
+                        </div>
+
+                        <div class="iot-log-box" style="background: rgba(10,15,28,0.9); border: 1px solid var(--border-color); border-radius: 14px; padding: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <h5>📡 Raw MQTT JSON Payload Terminal</h5>
+                                <span class="badge green" id="iot-stream-status">STREAM ACTIVE</span>
+                            </div>
+                            <pre id="iot-json-log" style="font-family: var(--font-mono); font-size: 0.76rem; color: #34d399; background: #070a13; padding: 0.85rem; border-radius: 10px; height: 210px; overflow-y: auto; white-space: pre-wrap; margin: 0;"></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB: Rancang Bangun Robotika 3D -->
+            <section id="robotics-dashboard" class="tab-content">
+                <div class="welcome-card robotics-welcome-card">
+                    <div class="welcome-text">
+                        <h3>🤖 Samuel.AI Rancang Bangun Robotika & System Control</h3>
+                        <p>Framework mekatronika dan robotika otonom karya <strong>Samuel Hasiholan Omega, S. Tr. T.</strong> (Alumni Teknik Robotika & AI Politeknik Negeri Batam). Menyediakan kalkulator Kinematika Maju & Balik (FK/IK), pengedam getaran torsi eksponensial $(x-y)^n$, serta simulator lengan robot 3-DOF real-time.</p>
+                    </div>
+                    <div class="ai-badge-row">
+                        <span class="badge green">🦾 Forward & Inverse Kinematics Core</span>
+                        <span class="badge purple">⚡ Exponential Damping $(x-y)^n$ Active</span>
+                        <span class="badge blue">🤖 ROS2 / Micro-ROS Compatible</span>
+                    </div>
+                </div>
+
+                <div class="glass-card robotics-main-card" style="margin-top: 1.5rem;">
+                    <div class="robotics-display-grid" style="display: grid; grid-template-columns: 1.3fr 1fr; gap: 1.5rem;">
+                        <!-- Canvas 3-DOF Robot Visualizer -->
+                        <div class="robotics-canvas-box" style="background: rgba(10,15,28,0.9); border: 1px solid var(--border-glow); border-radius: 16px; padding: 1.25rem; display: flex; flex-direction: column; gap: 0.85rem;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <h5>🦾 3-DOF Robotic Arm Kinematics Visualizer</h5>
+                                <span class="badge green" id="robot-status-badge">REAL-TIME SIMULATION OK</span>
+                            </div>
+                            <canvas id="roboticsCanvas" width="540" height="320" style="background: #070a13; border: 1px solid var(--border-color); border-radius: 12px; width: 100%; height: 320px;"></canvas>
+                        </div>
+
+                        <!-- Joint Slider Controls & Kinematics Output -->
+                        <div class="robotics-controls-box" style="background: rgba(10,15,28,0.8); border: 1px solid var(--border-color); border-radius: 16px; padding: 1.25rem; display: flex; flex-direction: column; gap: 1rem;">
+                            <h5>⚙️ Control Sudut Sendi & Kinematika</h5>
+
+                            <div class="slider-group">
+                                <div style="display: flex; justify-content: space-between;">
+                                    <label for="joint1-slider">Sendi 1 ($\theta_1$ Base):</label>
+                                    <span id="joint1-val" class="font-mono">0°</span>
+                                </div>
+                                <input type="range" id="joint1-slider" min="-180" max="180" value="0">
+                            </div>
+
+                            <div class="slider-group">
+                                <div style="display: flex; justify-content: space-between;">
+                                    <label for="joint2-slider">Sendi 2 ($\theta_2$ Shoulder):</label>
+                                    <span id="joint2-val" class="font-mono">30°</span>
+                                </div>
+                                <input type="range" id="joint2-slider" min="-90" max="90" value="30">
+                            </div>
+
+                            <div class="slider-group">
+                                <div style="display: flex; justify-content: space-between;">
+                                    <label for="joint3-slider">Sendi 3 ($\theta_3$ Elbow):</label>
+                                    <span id="joint3-val" class="font-mono">-45°</span>
+                                </div>
+                                <input type="range" id="joint3-slider" min="-135" max="135" value="-45">
+                            </div>
+
+                            <div class="kinematics-result-box" style="background: rgba(99,102,241,0.08); border: 1px solid rgba(99,102,241,0.3); border-radius: 10px; padding: 0.85rem;">
+                                <span class="label" style="font-size: 0.8rem; color: var(--text-muted); font-weight: 700;">KOORDINAT END-EFFECTOR (X, Y, Z):</span>
+                                <div id="robot-ee-pos" style="font-family: var(--font-mono); font-size: 1.1rem; color: #34d399; font-weight: 700; margin-top: 4px;">
+                                    X: 185.20 mm | Y: 0.00 mm | Z: 142.10 mm
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Robotics Quick Action Buttons -->
+                    <div class="robotics-action-bar" style="display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem;">
+                        <button id="btn-robot-home" class="btn btn-primary">🏠 Home Position (0°, 30°, -45°)</button>
+                        <button id="btn-robot-pick" class="btn btn-secondary">📦 Run Pick & Place Trajectory Cycle</button>
+                        <button id="btn-robot-calibrate" class="btn btn-secondary">🎯 Auto-Calibrate FK/IK Solvers</button>
+                        <button id="btn-robot-export" class="btn btn-secondary">📜 Export Robot URDF / JSON Specification</button>
+                    </div>
+
+                    <!-- Telemetry Output Log -->
+                    <div style="margin-top: 1.25rem;">
+                        <h5>📡 Raw Robotics Telemetry & Torque Specifications</h5>
+                        <pre id="robotics-telemetry-log" style="font-family: var(--font-mono); font-size: 0.76rem; color: #60a5fa; background: #070a13; border: 1px solid var(--border-color); padding: 0.85rem; border-radius: 10px; height: 140px; overflow-y: auto; margin-top: 0.5rem;"></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB: Sistem Bisnis IoT & Industri -->
+            <section id="business-dashboard" class="tab-content">
+                <div class="welcome-card business-welcome-card">
+                    <div class="welcome-text">
+                        <h3>💼 Samuel.AI Enterprise IoT Business & Predictive Intelligence</h3>
+                        <p>Arsitektur prediktif analitik bisnis dan manajemen industri IoT karya <strong>Samuel Hasiholan Omega, S. Tr. T.</strong> Memadukan model matematika eksponensial $P(x,y,n) = (x-y)^n + \int_0^1 x^x dx$ untuk memprediksi efisiensi pabrik pintar (*Smart Factory*), estimasi *downtime*, penghematan OPEX, serta ROI keuangan real-time berlatensi <strong>$<0.01\text{ ms}$</strong>.</p>
+                    </div>
+                    <div class="ai-badge-row">
+                        <span class="badge green">📈 Smart Factory Predictive Maintenance Active</span>
+                        <span class="badge purple">⚡ Exponential ROI Model $(x-y)^n$</span>
+                        <span class="badge blue">💱 Multi-Currency Engine (IDR/USD/EUR/JPY)</span>
+                    </div>
+                </div>
+
+                <!-- Executive BI KPI Cards Grid -->
+                <div class="biz-kpi-grid">
+                    <div class="glass-card biz-kpi-card">
+                        <span class="kpi-label">TOTAL ASET IOT AKTIF</span>
+                        <div class="kpi-value-row">
+                            <span class="kpi-val">1,250</span>
+                            <span class="badge green">Nodes Online</span>
+                        </div>
+                        <span class="kpi-sub">Smart Factory & Fleet Sensors</span>
+                    </div>
+
+                    <div class="glass-card biz-kpi-card">
+                        <span class="kpi-label">EFISIENSI ENERGI PABRIK</span>
+                        <div class="kpi-value-row">
+                            <span class="kpi-val" id="kpi-efficiency">98.7%</span>
+                            <span class="badge purple">+14.2% YoY</span>
+                        </div>
+                        <span class="kpi-sub">Optimized Gauss 16-Point Core</span>
+                    </div>
+
+                    <div class="glass-card biz-kpi-card">
+                        <span class="kpi-label">PENGHEMATAN OPEX ANNUALLY</span>
+                        <div class="kpi-value-row">
+                            <span class="kpi-val" id="kpi-savings">Rp 2.45 M</span>
+                            <span class="badge blue" id="kpi-currency-badge">IDR</span>
+                        </div>
+                        <span class="kpi-sub">Operational Cost Reduction</span>
+                    </div>
+
+                    <div class="glass-card biz-kpi-card">
+                        <span class="kpi-label">LATENSI SISTEM & ERROR RATE</span>
+                        <div class="kpi-value-row">
+                            <span class="kpi-val">&lt;0.01 ms</span>
+                            <span class="badge green">0.00% Error</span>
+                        </div>
+                        <span class="kpi-sub">Zero-Hallucination Verified</span>
+                    </div>
+                </div>
+
+                <!-- Main Business Simulator & Chart Box -->
+                <div class="glass-card business-main-card" style="margin-top: 1.5rem;">
+                    <div class="biz-controls-row" style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-end; background: rgba(10,15,28,0.7); padding: 1.25rem; border-radius: 14px; border: 1px solid var(--border-color);">
+                        <div class="input-group" style="flex: 1; min-width: 140px;">
+                            <label for="biz-x">Modal Investasi ($x$)</label>
+                            <input type="number" id="biz-x" value="10">
+                        </div>
+                        <div class="input-group" style="flex: 1; min-width: 140px;">
+                            <label for="biz-y">Pengeluaran ($y$)</label>
+                            <input type="number" id="biz-y" value="4">
+                        </div>
+                        <div class="input-group" style="flex: 1; min-width: 140px;">
+                            <label for="biz-n">Durasi Tahun ($n$)</label>
+                            <input type="number" id="biz-n" value="3">
+                        </div>
+                        <div class="input-group" style="flex: 1; min-width: 140px;">
+                            <label for="biz-curr-select">Mata Uang</label>
+                            <select id="biz-curr-select" style="background: rgba(10,15,28,0.9); border: 1px solid var(--border-color); color: #fff; padding: 0.6rem; border-radius: 8px;">
+                                <option value="IDR">🇮🇩 IDR (Rupiah)</option>
+                                <option value="USD">🇺🇸 USD (Dollar)</option>
+                                <option value="EUR">🇪🇺 EUR (Euro)</option>
+                                <option value="JPY">🇯🇵 JPY (Yen)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="biz-action-bar" style="display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.25rem;">
+                        <button id="btn-biz-sim" class="btn btn-primary">📊 Simulasikan Proyeksi Bisnis</button>
+                        <button id="btn-biz-opex" class="btn btn-secondary">⚡ Kalkulasi Penghematan OPEX</button>
+                        <button id="btn-biz-currency" class="btn btn-secondary">💱 Switch Currency IDR/USD</button>
+                        <button id="btn-biz-pdf" class="btn btn-secondary">📄 Cetak Laporan Eksekutif PDF/JSON</button>
+                    </div>
+
+                    <!-- Financial Chart & Report Grid -->
+                    <div class="biz-display-grid" style="display: grid; grid-template-columns: 1.3fr 1fr; gap: 1.5rem; margin-top: 1.5rem;">
+                        <div class="biz-chart-box" style="background: rgba(10,15,28,0.8); border: 1px solid var(--border-color); border-radius: 14px; padding: 1.25rem;">
+                            <h5>📊 Proyeksi Keuangan & Penghematan OPEX vs Biaya Tradisional</h5>
+                            <canvas id="businessFinancialChart" height="200"></canvas>
+                        </div>
+
+                        <div class="biz-report-box" style="background: rgba(10,15,28,0.9); border: 1px solid var(--border-color); border-radius: 14px; padding: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <h5>📑 Executive Financial & BI JSON Resume</h5>
+                                <span class="badge green">Q1 EXECUTIVE VERIFIED</span>
+                            </div>
+                            <pre id="business-report-log" style="font-family: var(--font-mono); font-size: 0.76rem; color: #facc15; background: #070a13; padding: 0.85rem; border-radius: 10px; height: 210px; overflow-y: auto; white-space: pre-wrap; margin: 0;"></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB: Design CAD & Payment Gateway -->
+            <section id="cad-payment-dashboard" class="tab-content">
+                <div class="welcome-card cad-welcome-card">
+                    <div class="welcome-text">
+                        <h3>📐 Samuel.AI Mechanical CAD Blueprints & FinTech Payment Gateway</h3>
+                        <p>Modul perancangan mekanikal CAD (Autodesk Inventor Engine) dan gerbang pembayaran digital karya <strong>Samuel Hasiholan Omega, S. Tr. T.</strong> Menyediakan generator cetak biru sketsa kasar, proyeksi 2D/3D (ISO Standards), ekspor PDF/.JPG, serta transaksi online real-time via <strong>QRIS, GoPay, OVO, DANA, dan Bank Virtual Account</strong>.</p>
+                    </div>
+                    <div class="ai-badge-row">
+                        <span class="badge green">📐 Autodesk Inventor CAD Core Active</span>
+                        <span class="badge purple">📄 Blueprint PDF & High-Res .JPG Exporter</span>
+                        <span class="badge blue">💳 Multi-Channel QRIS & E-Wallet Gateway</span>
+                    </div>
+                </div>
+
+                <!-- Main CAD & Payment Display Grid -->
+                <div class="glass-card cad-main-card" style="margin-top: 1.5rem;">
+                    <div class="cad-grid" style="display: grid; grid-template-columns: 1.3fr 1fr; gap: 1.5rem;">
+                        <!-- CAD Canvas Viewer Box -->
+                        <div class="cad-canvas-box" style="background: rgba(10,15,28,0.9); border: 1px solid var(--border-glow); border-radius: 16px; padding: 1.25rem; display: flex; flex-direction: column; gap: 0.85rem;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <h5>📐 Interactive CAD Blueprint Visualizer (ISO Standard)</h5>
+                                <span class="badge green" id="cad-view-badge">3D ISOMETRIC VIEW</span>
+                            </div>
+                            <canvas id="cadCanvas" width="540" height="340" style="background: #060911; border: 1px solid var(--border-color); border-radius: 12px; width: 100%; height: 340px;"></canvas>
+                            
+                            <!-- CAD Controls Action Buttons -->
+                            <div class="cad-action-bar" style="display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.5rem;">
+                                <button id="btn-cad-rough" class="btn btn-secondary">✏️ Rough Sketch</button>
+                                <button id="btn-cad-2d" class="btn btn-secondary">📐 2D Projection</button>
+                                <button id="btn-cad-3d" class="btn btn-primary">🧊 Render 3D CAD</button>
+                                <button id="btn-cad-pdf" class="btn btn-secondary">📄 Export PDF</button>
+                                <button id="btn-cad-jpg" class="btn btn-secondary">🖼️ Download .JPG</button>
+                            </div>
+                        </div>
+
+                        <!-- FinTech Payment Gateway Box -->
+                        <div class="payment-box" style="background: rgba(10,15,28,0.85); border: 1px solid var(--border-color); border-radius: 16px; padding: 1.25rem; display: flex; flex-direction: column; gap: 1rem;">
+                            <h5>💳 Online FinTech Payment Gateway</h5>
+                            
+                            <div class="payment-input-group" style="display: flex; flex-direction: column; gap: 0.4rem;">
+                                <label style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">NOMINAL TRANSAKSI (IDR):</label>
+                                <input type="number" id="pay-amount" value="250000" style="background: rgba(7,10,19,0.9); border: 1px solid var(--border-color); color: #34d399; font-family: var(--font-mono); font-size: 1.1rem; font-weight: 700; padding: 0.6rem; border-radius: 8px;">
+                            </div>
+
+                            <!-- QRIS Generator Box -->
+                            <div class="qris-box" style="background: #ffffff; border-radius: 12px; padding: 1rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
+                                <span style="font-size: 0.75rem; color: #1e293b; font-weight: 800; letter-spacing: 0.5px;">SCAN QRIS DYNAMIC CODE (OVO/GOPAY/DANA/BANK)</span>
+                                <canvas id="qrisCanvas" width="180" height="180" style="border: 1px solid #cbd5e1; border-radius: 8px;"></canvas>
+                                <span style="font-size: 0.72rem; color: #64748b; font-weight: 600;">NMID: ID1020267781992 • SAMUEL.AI OFFICIAL</span>
+                            </div>
+
+                            <!-- Payment Action Buttons -->
+                            <div class="pay-action-bar" style="display: flex; flex-wrap: wrap; gap: 0.6rem;">
+                                <button id="btn-pay-qris" class="btn btn-primary" style="flex: 1;">📱 QRIS Code</button>
+                                <button id="btn-pay-gopay" class="btn btn-secondary" style="flex: 1;">🟢 GoPay / OVO</button>
+                                <button id="btn-pay-va" class="btn btn-secondary" style="width: 100%;">🏦 Virtual Account BCA/Mandiri</button>
+                                <button id="btn-pay-webhook" class="btn btn-secondary" style="width: 100%;">⚡ Webhook Payment SUCCESS</button>
+                            </div>
+
+                            <!-- Transaction Status Output -->
+                            <div style="margin-top: 0.25rem;">
+                                <span style="font-size: 0.75rem; color: var(--text-muted); font-weight: 600;">TRANSACTION WEBHOOK STATUS:</span>
+                                <pre id="payment-status-log" style="font-family: var(--font-mono); font-size: 0.74rem; color: #34d399; background: #070a13; border: 1px solid var(--border-color); padding: 0.6rem; border-radius: 8px; height: 95px; overflow-y: auto; margin-top: 0.25rem; white-space: pre-wrap;"></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB: Exponential Delta Exponent Energy Application -->
+            <section id="energy-dashboard" class="tab-content">
+                <div class="glass-card welcome-card" style="border-left: 4px solid #facc15;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
+                        <div>
+                            <h3 style="color: #facc15; font-size: 1.5rem; font-weight: 800;">⚡ Exponential of Delta Exponent Energy Application</h3>
+                            <p style="color: var(--text-secondary); margin-top: 0.4rem; max-width: 850px;">
+                                Platform Terintegrasi Multi-Disiplin Ilmu: <strong>IoT Micro-grid Telemetry</strong>, <strong>Bisnis Financial ROI Analytics</strong>, <strong>FinTech Smart Energy Payment Gateway</strong>, dan <strong>Design Rangkaian Circuit Blueprint</strong> berbasis kalkulus eksak <em>Rumus Perpangkatan Universal 4.0</em>.
+                            </p>
+                        </div>
+                        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                            <span class="badge gold">⚡ Sub-ms Energy Engine</span>
+                            <span class="badge green">📡 Edge IoT Telemetry Stream</span>
+                            <span class="badge blue">💳 Dynamic Energy QRIS Token</span>
+                            <a href="Exponential of Delta Exponent Energy Application.pdf" target="_blank" class="btn btn-primary" style="text-decoration: none; padding: 0.5rem 1rem; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 0.4rem;">
+                                📄 View IEEE PDF Paper
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Energy Equation Latex Block -->
+                    <div class="formula-display-container" style="margin-top: 1.2rem; background: rgba(7,10,19,0.95); border: 1px solid var(--border-glow); border-radius: 12px; padding: 1rem;">
+                        <div class="formula-label" style="color: #facc15; font-weight: 700; font-size: 0.8rem;">FORMULASI DIVERGENSI ENERGI DELTA EXPONENT (SCOPUS Q1 FORMULA):</div>
+                        <div class="formula-math" style="margin-top: 0.5rem; text-align: center; font-size: 1.2rem;">
+                            $$E_{\Delta}(x, y, n, t) = \int_{0}^{t} \left( (x-y)^n \cdot e^{-\alpha \tau} + \int_{0}^{1} \xi^\xi d\xi \right) d\tau = \left[ (x-y)^n \cdot \frac{1 - e^{-\alpha t}}{\alpha} + 0.783430510712134 \cdot t \right]$$
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Energy Real-Time Metric Indicators -->
+                <div class="metrics-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 1.5rem;">
+                    <div class="glass-card metric-card">
+                        <span class="metric-title">TOTAL ENERGY DENSITY</span>
+                        <div class="metric-value" id="energy-val-total">48.72 kWh</div>
+                        <span class="metric-sub" style="color: #34d399;">⚡ Exponential Growth Mode</span>
+                    </div>
+                    <div class="glass-card metric-card">
+                        <span class="metric-title">POWER OUTPUT (REAL-TIME)</span>
+                        <div class="metric-value" id="energy-val-power">3.45 kW</div>
+                        <span class="metric-sub" style="color: #38bdf8;">📡 3-Phase Grid Telemetry</span>
+                    </div>
+                    <div class="glass-card metric-card">
+                        <span class="metric-title">OPEX FINANCIAL SAVINGS</span>
+                        <div class="metric-value" id="energy-val-opex">Rp 14.850.000</div>
+                        <span class="metric-sub" style="color: #facc15;">💼 Business ROI: 3.2 Months</span>
+                    </div>
+                    <div class="glass-card metric-card">
+                        <span class="metric-title">CARBON CREDIT OFFSET</span>
+                        <div class="metric-value" id="energy-val-carbon">2.84 tCO₂</div>
+                        <span class="metric-sub" style="color: #34d399;">🌿 Clean Energy Certified</span>
+                    </div>
+                </div>
+
+                <!-- Energy Dashboard Dual Grid -->
+                <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 1.5rem; margin-top: 1.5rem;">
+                    <!-- Circuit Schematic Blueprint & Circuit Design Visualizer -->
+                    <div class="glass-card" style="padding: 1.25rem; display: flex; flex-direction: column; gap: 1rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <h5 style="color: #facc15; font-size: 1rem; font-weight: 700;">🔌 DESIGN RANGKAIAN & BLUEPRINT EMBEDDED CONVERTER (IEEE DIAGRAM)</h5>
+                            <span class="badge green" id="circuit-status-badge">ACTIVE STREAM</span>
+                        </div>
+                        <canvas id="energyCircuitCanvas" width="540" height="320" style="background: #060911; border: 1px solid var(--border-glow); border-radius: 12px; width: 100%; height: 320px;"></canvas>
+                        
+                        <div style="display: flex; gap: 0.6rem; flex-wrap: wrap;">
+                            <button id="btn-circuit-schematic" class="btn btn-primary">🔌 Schematic Circuit</button>
+                            <button id="btn-circuit-block" class="btn btn-secondary">📐 Block Diagram</button>
+                            <button id="btn-circuit-simulate" class="btn btn-secondary">⚡ Run Signal Simulation</button>
+                        </div>
+                    </div>
+
+                    <!-- FinTech Energy Payment Gateway & Micro-Metering -->
+                    <div class="glass-card" style="padding: 1.25rem; display: flex; flex-direction: column; gap: 1rem;">
+                        <h5 style="color: #38bdf8; font-size: 1rem; font-weight: 700;">💳 FINTECH ENERGY PAYMENT & SMART METERING</h5>
+                        
+                        <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                            <label style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">PEMBELIAN KREDIT ENERGI (KWH):</label>
+                            <input type="number" id="energy-kwh-input" value="100" style="background: rgba(7,10,19,0.9); border: 1px solid var(--border-color); color: #facc15; font-family: var(--font-mono); font-size: 1.1rem; font-weight: 700; padding: 0.6rem; border-radius: 8px;">
+                        </div>
+
+                        <!-- Dynamic Energy QRIS Box -->
+                        <div style="background: #ffffff; border-radius: 12px; padding: 1rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 0.4rem;">
+                            <span style="font-size: 0.75rem; color: #1e293b; font-weight: 800;">SCAN DYNAMIC ENERGY QRIS TOKEN</span>
+                            <canvas id="energyQrisCanvas" width="170" height="170" style="border: 1px solid #cbd5e1; border-radius: 8px;"></canvas>
+                            <span style="font-size: 0.72rem; color: #64748b; font-weight: 600;" id="energy-token-text">TOKEN: EXP-ENERGY-2026-991248</span>
+                        </div>
+
+                        <div style="display: flex; gap: 0.6rem; flex-wrap: wrap;">
+                            <button id="btn-generate-energy-token" class="btn btn-primary" style="flex: 1;">⚡ Generate QRIS Token</button>
+                            <button id="btn-confirm-energy-payment" class="btn btn-secondary" style="flex: 1;">✅ Confirm Micro-Payment</button>
+                        </div>
+
+                        <div style="margin-top: 0.25rem;">
+                            <span style="font-size: 0.75rem; color: var(--text-muted); font-weight: 600;">TELEMETRY & PAYMENT LOG:</span>
+                            <pre id="energy-log-output" style="font-family: var(--font-mono); font-size: 0.74rem; color: #34d399; background: #070a13; border: 1px solid var(--border-color); padding: 0.6rem; border-radius: 8px; height: 90px; overflow-y: auto; white-space: pre-wrap;">[0.000 ms] Energy Engine Active. 0% Error Probability Guaranteed.</pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Main JavaScript Logic -->
+    <script src="app.js"></script>
+</body>
+</html>

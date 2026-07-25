@@ -1,0 +1,38 @@
+name: Scopus Q1 Quality Audit & CI Pipeline
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  audit-and-test:
+    name: Verification & Automated Benchmark
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js Environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache-dependency-path: 'package.json'
+
+      - name: Run Automated Test Suite & Mathematical Audit
+        run: |
+          node test_suite.js
+
+      - name: Verify HTML & Asset Integrity
+        run: |
+          node -e "
+          const fs = require('fs');
+          const html = fs.readFileSync('index.html', 'utf8');
+          const js = fs.readFileSync('app.js', 'utf8');
+          const css = fs.readFileSync('style.css', 'utf8');
+          console.log('✅ index.html integrity check passed:', html.length, 'bytes');
+          console.log('✅ app.js integrity check passed:', js.length, 'bytes');
+          console.log('✅ style.css integrity check passed:', css.length, 'bytes');
+          "

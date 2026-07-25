@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this software or academic research paper, please cite it as below."
+authors:
+  - family-names: "Omega"
+    given-names: "Samuel Hasiholan"
+    honorific-suffix: "S. Tr. T."
+    affiliation: "Alumni Teknik Robotika & Kecerdasan Buatan (A . I), Politeknik Negeri Batam"
+title: "Samuel's Problem Theorem: High-Precision Embedded & IoT Framework"
+version: "4.0.0"
+date-released: "2026-07-25"
+repository-code: "https://github.com/SamuelPurba/Samuel-s-Problem-Theorem.git"
+license: "MIT"
+keywords:
+  - "Samuel's Problem Theorem"
+  - "Sophomore's Dream"
+  - "Newton Binomial Theorem"
+  - "Smart Grid IoT"
+  - "FinTech QRIS Metering"
+  - "Scopus Q1"
