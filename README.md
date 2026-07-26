@@ -26,9 +26,10 @@
 
 ## 📜 Manifesto & Abstrak Akademis (Scopus Q1 Executive Abstract)
 
+> [!NOTE]
 > **Manifes Riset & Abstrak Scopus Q1** — *“Melawan kemiskinan dengan pendidikan, melawan pemerintah korup penindas rakyat Indonesia dengan pengetahuan.”* 
 > 
-> Makalah publikasi dan repositori ini menyajikan **formalisasi akademis berstandar Scopus Q1**, audit kalkulus kritis, serta implementasi *engine* perangkat lunak kecerdasan buatan (A . I) interaktif untuk **Samuel's Problem Theorem** karya **Samuel Hasiholan Omega, S. Tr. T.**. Persamaan teorema ini mengintegrasikan ekuivalensi Teorema Binomial Newton $(x-y)^n = \sum_{k=0}^n \binom{n}{k} x^{n-k} (-1)^k y^k$, integrasi eksak deret tak hingga **Sophomore's Dream** $\int_0^1 x^x \, dx = \sum_{m=1}^{\infty} \frac{(-1)^{m-1}}{m^m} \approx 0.783430510712134$, arsitektur mikrokontroler embedded (STM32/ESP32), sensor arus ACS712 & transduser tegangan B25, telemetri *Smart Grid Edge IoT*, analitik bisnis *OPEX Savings*, serta *FinTech Smart Energy Meter Dynamic QRIS Payment Gateway*.
+> Saya, **Samuel Hasiholan Omega, S. Tr. T.**, merumuskan **Samuel's Problem Theorem** untuk memecahkan problematika limit batas tak-hingga pada fungsi berpangkat eksponensial melalui pembuktian ekuivalensi Teorema Binomial Newton $(x-y)^n = \sum_{k=0}^n \binom{n}{k} x^{n-k} (-1)^k y^k$ yang dipadukan secara analitis dengan deret konvergen **Sophomore's Dream** $\int_0^1 x^x \, \mathrm{d}x = \sum_{m=1}^{\infty} \frac{(-1)^{m-1}}{m^m} \approx 0.783430510712134$. Kerangka teoretis ini saya integrasikan secara langsung ke dalam arsitektur embedded mikrokontroler (STM32/ESP32), sensor arus ACS712, transduser tegangan B25, telemetri *Smart Grid Edge IoT*, analitik bisnis efisiensi operasional (*OPEX Savings*), serta sistem pembayaran *FinTech Smart Energy Meter Dynamic QRIS Payment Gateway*.
 
 **Kata Kunci (Scopus Index Terms)**: *Samuel's Problem Theorem, Audit Kalkulus Analitis, Teorema Binomial Newton, Sophomore's Dream, Edge IoT Telemetry, FinTech QRIS Metering, Circuit Schematic Blueprint, Kecerdasan Buatan (A . I), Politeknik Negeri Batam*.
 
@@ -39,7 +40,7 @@
 Persamaan dasar **Samuel's Problem Theorem** didefinisikan sebagai berikut:
 
 $$\begin{aligned}
-\mathcal{S}_{\text{problem}}(x, y, n, t) &= \lim_{x \to \infty} \left( (x-y)^n + \int_{0}^{1} \xi^\xi \, d\xi \right) \\
+\mathcal{S}_{\text{problem}}(x, y, n, t) &= \lim_{x \to \infty} \left( (x-y)^n + \int_{0}^{1} \xi^\xi \, \mathrm{d}\xi \right) \\
 &= \left[ \sum_{k=0}^n \binom{n}{k} x^{n-k} (-1)^k y^k + 0.783430510712134 \right]
 \end{aligned}$$
 
