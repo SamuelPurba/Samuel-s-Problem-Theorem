@@ -1,4 +1,4 @@
-# 🏆 SAMUEL.A.I - Samuel's Problem Theorem: High-Precision Analytical Engine & Scopus Q1 Academic Framework
+# 🏆 Samuel's Problem Theorem: High-Precision Analytical Engine & Scopus Q1 Academic Framework
 
 <p align="center">
   <img src="avatar_profile.png" alt="Samuel Hasiholan Omega Purba, S. Tr. T." width="160" style="border-radius: 50%; border: 4px solid #6366f1; box-shadow: 0 12px 35px rgba(99, 102, 241, 0.5);" />

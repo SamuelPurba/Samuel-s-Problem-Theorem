@@ -1,5 +1,5 @@
 /**
- * 🧪 SAMUEL.A.I - 4-Pillar Scopus Q1 Comprehensive Test Suite & Benchmark
+ * 🧪 SAMUEL PURBA - 4-Pillar Scopus Q1 Comprehensive Test Suite & Benchmark
  * Author: Samuel Hasiholan Omega Purba, S. Tr. T.
  * Framework: Node.js Automated Verification Engine
  */
@@ -67,7 +67,7 @@ function evaluateNewtonBinomial(x, y, n) {
 
 // Suite Runner
 console.log("=========================================================================");
-console.log(" 🔬 SAMUEL.A.I - 4-PILLAR SCOPUS Q1 AUTOMATED VERIFICATION SUITE");
+console.log(" 🔬 SAMUEL PURBA - 4-PILLAR SCOPUS Q1 AUTOMATED VERIFICATION SUITE");
 console.log("=========================================================================");
 
 let passed = 0;
